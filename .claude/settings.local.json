@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(node .claude/skills/bpmn-visualize/scripts/validate-bpmn.mjs __TRACKED_VAR__/agent-test/lanes.bpmn)",
+      "PowerShell(Stop-Process -Id 3484 -Force -ErrorAction SilentlyContinue; Get-CimInstance Win32_Process -Filter \"Name='msedge.exe'\" | Where-Object { $_.CommandLine -match 'edge-prof' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; \"stopped\")"
+    ]
+  }
+}

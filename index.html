@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BPMN Modeler</title>
+  </head>
+  <body>
+    <header class="toolbar">
+      <strong class="title">BPMN Modeler</strong>
+      <button id="btn-new" type="button">New</button>
+      <button id="btn-open" type="button">Open…</button>
+      <input id="file-input" type="file" accept=".bpmn,.xml" hidden />
+      <button id="btn-save" type="button">Save .bpmn</button>
+      <button id="btn-svg" type="button">Export SVG</button>
+      <button id="btn-layout" type="button">Auto layout</button>
+      <button id="btn-fit" type="button">Zoom to fit</button>
+      <span id="status" class="status"></span>
+    </header>
+    <main id="canvas"></main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

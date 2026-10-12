@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  background: #f7f7f7;
+}
+
+.toolbar .title {
+  margin-right: 12px;
+}
+
+.toolbar button {
+  padding: 4px 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background: #eef4ff;
+}
+
+.status {
+  margin-left: auto;
+  color: #666;
+  font-size: 13px;
+}
+
+.status.error {
+  color: #c00;
+}
+
+#canvas {
+  flex: 1;
+  position: relative;
+}
+
+#canvas.drag-over {
+  outline: 3px dashed #4a90e2;
+  outline-offset: -6px;
+}

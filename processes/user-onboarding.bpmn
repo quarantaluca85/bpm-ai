@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  id="Definitions_UserOnboarding"
+                  targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="Process_UserOnboarding" name="User onboarding" isExecutable="false">
+    <bpmn:startEvent id="Start_OnboardingRequested" name="Onboarding requested" />
+    <bpmn:userTask id="Task_FetchUserData" name="Fetch user data" />
+    <bpmn:serviceTask id="Task_InsertRecords" name="Insert records in system" />
+    <bpmn:userTask id="Task_RequestApproval" name="Request approval" />
+    <bpmn:exclusiveGateway id="Gateway_Approved" name="Approved?" />
+    <bpmn:endEvent id="End_UserOnboarded" name="User onboarded" />
+    <bpmn:endEvent id="End_OnboardingRejected" name="Onboarding rejected" />
+
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="Start_OnboardingRequested" targetRef="Task_FetchUserData" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_FetchUserData" targetRef="Task_InsertRecords" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_InsertRecords" targetRef="Task_RequestApproval" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_RequestApproval" targetRef="Gateway_Approved" />
+    <bpmn:sequenceFlow id="Flow_Yes" name="yes" sourceRef="Gateway_Approved" targetRef="End_UserOnboarded" />
+    <bpmn:sequenceFlow id="Flow_No" name="no" sourceRef="Gateway_Approved" targetRef="End_OnboardingRejected" />
+  </bpmn:process>
+</bpmn:definitions>
